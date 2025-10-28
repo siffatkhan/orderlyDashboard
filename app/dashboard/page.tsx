@@ -1,24 +1,26 @@
 // "use client"
 // import React, { useState } from "react";
 // import { orders } from "./data";
-// import MobileCard from "./mobilecard";
 
 
 // // --------------------------------------------------
 // const getStatusStyles = (status: string) => {
 //   switch (status.toLowerCase()) {
 //     case "booked":
-//       return "text-green-700 bg-green-100";
+//       return "text-gray-700 bg-[#D9F2D0]";
 //     case "cancelled":
-//       return "text-red-700 bg-red-100";
+//       return "text-gray-700 bg-[#F2D0D0]";
 //     case "pending":
-//       return "text-blue-700 bg-blue-100";
+//       return "text-gray-700 bg-[#D0EBF2]";
 //     case "on route":
-//       return "text-yellow-700 bg-yellow-100";
+//       return "text-gray-700 bg-[#F2F0D0]";
 //     default:
 //       return "text-gray-700 bg-gray-100";
 //   }
 // };
+
+
+// // const [openDotMenu, setOpenDotMenu] = useState(false);
 
 
 
@@ -38,16 +40,13 @@
 
 // // --------------------------------------------------
 //   return (
-//     <div className="w-full md:w-[95%] max-w-[1216px] rounded-xl border border-gray-200 mx-auto my-6 overflow-x-auto">
-
-
-
-//       <div className="flex justify-between items-center pt-3 pr-6 pb-5 pl-6 gap-4 border-b border-gray-100">
+//     <div className="overflow-x-auto md:overflow-visible w-full md:w-[95%] max-w-[1216px] max-h-[569px] rounded-xl border bg-white border-gray-200 mx-auto my-20">
+//       <div className="flex justify-between  h-[92px] items-center pt-3 pr-6 pb-5 pl-6 gap-4 border-b border-gray-100">
 //           <div>
-//             <h2 className="text-gray-900 text-lg font-semibold">Customers</h2>
-//              <p className="text-gray-500 text-sm">These companis have purchased in the last 12 months.</p>
+//             <h2 className="text-gray-900 text-[18px] font-semibold">Customers</h2>
+//              <p className="text-gray-600 text-sm  font-normal font-w mt-1.5">These companies have purchased in the last 12 months.</p>
 //           </div>
-//           <button className="text-gray-700 hover:text-gray-700">
+//           <button className="text-gray-700 cursor-pointer">
 //               <svg
 //                 xmlns="http://www.w3.org/2000/svg"
 //                 fill="none"
@@ -59,22 +58,23 @@
 //                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
 //             </svg>
 //           </button>
+
+    
+
 //       </div>
 //       {/* ======================================================================== */}
-//       <table className="min-w-full text-xs sm:text-sm border-collapse">
-//         {/* <table className="hidden md:table w-full border-collapse"> */}
-
-//         <thead className="text-xs border border-gray-200 rounded">
+//       <table className="min-w-[800px] md:min-w-full text-xs sm:text-sm border-collapse">
+//         <thead className="text-xs bg-[#FAFAFA] border-b border-[#E9EAEB] ">
 //           <tr>
 //             {headers.map((key) => (
-//               <th key={key} className="text-left text-gray-600 capitalize bg-gray-50 p-2 sm:p-4">
+//               <th key={key} className="min-w-[112px] font-semibold h-[44px] text-left  text-gray-600 capitalize px-4 py-3 sm:px-3 sm:py-2 ">
 //                 {key}
 //               </th>
 //             ))}
 //           </tr>
 //         </thead>
         
-//         <tbody className="text-sm border border-gray-100">
+//         <tbody className="text-[14px] font-medium leading-[20px] text-gray-900 border border-gray-200">
 //           {orders.map((order) => {
 //             const isExpanded = expandedRows.includes(order.tracking);
 //             const visibleProducts = isExpanded
@@ -84,22 +84,25 @@
 //             return (
 //               <tr
 //                 key={order.tracking}
-//                 className="border-b  border-gray-200 hover:bg-gray-50 transition-colors"
+//                 className="border-b border-gray-200 h-[72px] sm:h-[60px]"
 //               >
 //                 {headers.map((key) => (
-//                   <td key={key as string} className="p-2 sm:p-3 text-gray-700">
+//                   <td key={key as string} className="p-4 text-gray-900 ">
 //                     {key === "product" ? (
-//                       <div>
+//                       <div className="w-[200px]">
 //                         <ul>
 //                           {visibleProducts.map((p, i) => (
-//                             <li key={i} className="border text-xs border-gray-300/60 rounded-md p-1 mb-1">{p}</li>
+//                             // <li key={i} className=" inline-block w-fit border text-gray-700 text-xs h-[22px] leading-[18px] border-gray-300/60 rounded-md px-2 py-[2px] mb-1">
+//                             <li key={i} className="inline-block w-fit border text-gray-700 text-xs sm:text-[11px] h-[22px] leading-[18px] border-gray-300/60 rounded-md px-2 py-[2px] mb-1">
+
+//                               {p}</li>
 //                           ))}
 //                         </ul>
 
 //                         {order.product.length > 1 && (
 //                           <button
 //                             onClick={() => toggleExpand(order.tracking)}
-//                             className="text-blue-500 text-xs underline mt-1"
+//                             className="text-[#5798F4] text-xs  mt-1"
 //                           >
 //                             {isExpanded
 //                               ? "Show less"
@@ -112,20 +115,19 @@
 //                         <div>{order.customer.customerName}</div>
 //                         <a
 //                           href={order.customer.addressURL}
-//                           className="text-black-500 text-xs underline"
+//                           className="text-gray-600 text-xs  font-normal underline"
 //                         >
 //                           View Address
 //                         </a>
 //                       </div>
 //                     ) : (
 //                       key === "courierStatus" ? (
-//                           <span className={`px-2 py-1 text-xs rounded-full font-medium ${getStatusStyles(order[key] as string)}`}>
+//                           <span className={`px-2 py-1 text-[12px] rounded-full font-medium ${getStatusStyles(order[key] as string)}`}>
 //                               {order[key]}
 //                             </span>
 //                                 ) : (
 //                             order[key]
 //                             )
-
 //                     )}
 //                   </td>
 //                 ))}
@@ -134,9 +136,6 @@
 //           })}
 //         </tbody>
 //       </table>
-
-  
-//     <MobileCard/>
   
 //     </div>
 //   );
@@ -160,181 +159,21 @@
 
 // ===============================================================
 
-
-
-// "use client"
-// import React, { useState } from "react";
-// import { orders } from "./data";
-// import MobileCard from "./mobilecard";
-
-// const getStatusStyles = (status: string) => {
-//   switch (status.toLowerCase()) {
-//     case "booked":
-//       return "text-green-700 bg-green-100";
-//     case "cancelled":
-//       return "text-red-700 bg-red-100";
-//     case "pending":
-//       return "text-blue-700 bg-blue-100";
-//     case "on route":
-//       return "text-yellow-700 bg-yellow-100";
-//     default:
-//       return "text-gray-700 bg-gray-100";
-//   }
-// };
-
-// export default function Page() {
-//   const [expandedRows, setExpandedRows] = useState<string[]>([]);
-//   const toggleExpand = (tracking: string) => {
-//     setExpandedRows((prev) =>
-//       prev.includes(tracking)
-//         ? prev.filter((t) => t !== tracking)
-//         : [...prev, tracking]
-//     );
-//   };
-
-//   const headers = Object.keys(orders[0]) as (keyof typeof orders[0])[];
-
-//   return (
-//     <div className="w-full md:w-[95%] max-w-[1216px] rounded-xl border border-gray-200 mx-auto my-6 overflow-x-auto bg-white">
-//       <div className="flex justify-between items-center pt-3 pr-6 pb-5 pl-6 gap-4 border-b border-gray-100">
-//         <div>
-//           <h2 className="text-gray-900 text-lg sm:text-xl font-semibold">Customers</h2>
-//           <p className="text-gray-500 text-xs sm:text-sm">
-//             These companies have purchased in the last 12 months.
-//           </p>
-//         </div>
-//         <button className="text-gray-700 hover:text-gray-700">
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             strokeWidth={2}
-//             stroke="currentColor"
-//             className="w-5 h-5"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               d="M12 6h.01M12 12h.01M12 18h.01"
-//             />
-//           </svg>
-//         </button>
-//       </div>
-
-//       {/* TABLE */}
-//       <div className="w-full overflow-x-auto">
-//         <table className="min-w-[600px] sm:min-w-full text-[11px] sm:text-sm border-collapse">
-//           <thead className="text-xs border border-gray-200 bg-gray-50">
-//             <tr>
-//               {headers.map((key) => (
-//                 <th
-//                   key={key}
-//                   className="text-left text-gray-600 capitalize px-3 sm:px-5 py-2 sm:py-3 whitespace-nowrap"
-//                 >
-//                   {key}
-//                 </th>
-//               ))}
-//             </tr>
-//           </thead>
-
-//           <tbody className="text-gray-700">
-//             {orders.map((order) => {
-//               const isExpanded = expandedRows.includes(order.tracking);
-//               const visibleProducts = isExpanded
-//                 ? order.product
-//                 : order.product.slice(0, 1);
-
-//               return (
-//                 <tr
-//                   key={order.tracking}
-//                   className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
-//                 >
-//                   {headers.map((key) => (
-//                     <td
-//                       key={key as string}
-//                       className="px-3 sm:px-5 py-2 sm:py-3 align-top whitespace-nowrap"
-//                     >
-//                       {key === "product" ? (
-//                         <div>
-//                           <ul>
-//                             {visibleProducts.map((p, i) => (
-//                               <li
-//                                 key={i}
-//                                 className="border text-[10px] sm:text-xs border-gray-300/60 rounded-md px-2 py-1 mb-1"
-//                               >
-//                                 {p}
-//                               </li>
-//                             ))}
-//                           </ul>
-
-//                           {order.product.length > 1 && (
-//                             <button
-//                               onClick={() => toggleExpand(order.tracking)}
-//                               className="text-blue-500 text-[10px] sm:text-xs underline mt-1"
-//                             >
-//                               {isExpanded
-//                                 ? "Show less"
-//                                 : `+${order.product.length - 1} more items`}
-//                             </button>
-//                           )}
-//                         </div>
-//                       ) : key === "customer" ? (
-//                         <div>
-//                           <div className="text-[11px] sm:text-sm font-medium">
-//                             {order.customer.customerName}
-//                           </div>
-//                           <a
-//                             href={order.customer.addressURL}
-//                             className="text-blue-500 text-[10px] sm:text-xs underline"
-//                           >
-//                             View Address
-//                           </a>
-//                         </div>
-//                       ) : key === "courierStatus" ? (
-//                         <span
-//                           className={`px-2 py-[2px] text-[10px] sm:text-xs rounded-full font-medium ${getStatusStyles(
-//                             order[key] as string
-//                           )}`}
-//                         >
-//                           {order[key]}
-//                         </span>
-//                       ) : (
-//                         <span className="text-[11px] sm:text-sm">{order[key]}</span>
-//                       )}
-//                     </td>
-//                   ))}
-//                 </tr>
-//               );
-//             })}
-//           </tbody>
-//         </table>
-//       </div>
-
-//       {/* KEEP MOBILE CARD BELOW FOR TESTING OR FUTURE USE */}
-//       <div className="hidden">
-//         <MobileCard />
-//       </div>
-//     </div>
-//   );
-// }
-
-// ===============================================================
-
-"use client"
+"use client";
 import React, { useState } from "react";
 import { orders } from "./data";
-import MobileCard from "./mobilecard";
 
+// --------------------------------------------------
 const getStatusStyles = (status: string) => {
   switch (status.toLowerCase()) {
     case "booked":
-      return "text-green-700 bg-green-100";
+      return "text-gray-700 bg-[#D9F2D0]";
     case "cancelled":
-      return "text-red-700 bg-red-100";
+      return "text-gray-700 bg-[#F2D0D0]";
     case "pending":
-      return "text-blue-700 bg-blue-100";
+      return "text-gray-700 bg-[#D0EBF2]";
     case "on route":
-      return "text-yellow-700 bg-yellow-100";
+      return "text-gray-700 bg-[#F2F0D0]";
     default:
       return "text-gray-700 bg-gray-100";
   }
@@ -353,127 +192,255 @@ export default function Page() {
   const headers = Object.keys(orders[0]) as (keyof typeof orders[0])[];
 
   return (
-    <div className="w-full max-w-[1216px] rounded-xl border border-gray-200 mx-auto my-6 bg-white px-2 sm:px-4 md:px-6 overflow-hidden">
-      <div className="flex justify-between items-center pt-3 pb-4 gap-4 border-b border-gray-100">
+    <div className="overflow-x-auto md:overflow-visible w-full md:w-[95%] max-w-[1216px] max-h-[569px] rounded-xl border bg-white border-gray-200 my-10 md:my-20 mx-4 md:mx-auto">
+      {/* ---------------- HEADER ---------------- */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center h-auto md:h-[92px] pt-3 pr-3 pb-3 pl-3 md:pt-3 md:pr-6 md:pb-5 md:pl-6 gap-2 md:gap-4 border-b border-gray-100">
         <div>
-          <h2 className="text-gray-900 text-lg sm:text-xl font-semibold">Customers</h2>
-          <p className="text-gray-500 text-xs sm:text-sm">
-            These companies have purchased in the last 12 months.
-          </p>
-        </div>
-        <button className="text-gray-700 hover:text-gray-700">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 6h.01M12 12h.01M12 18h.01"
-            />
-          </svg>
-        </button>
+          <h2 className="text-gray-900 text-[15px] md:text-[18px] font-semibold ">Customers </h2>
+          <p className="text-gray-600 text-[12px] md:text-sm font-normal mt-1 md:mt-1.5 ">
+            These companies have purchased in the last 12 months.</p>
+            </div>
+          <button className="text-gray-700 cursor-pointer">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
+            </svg>
+          </button>
       </div>
+      {/* ---------------- TABLE ---------------- */}
+      <table className="min-w-[720px] md:min-w-full border-collapse">
+        <thead className="bg-[#FAFAFA] border-b border-[#E9EAEB]">
+          <tr>
+            {headers.map((key) => (
+              <th
+                key={key}
+                className="text-[11px] min-w-[120px] md:h-[44px] font-semibold text-left text-gray-600 capitalize  px-2 py-1.5 md:px-4 md:py-3"
+              >
+                {key}
+              </th>
+            ))}
+          </tr>
 
-      {/* Responsive Table Wrapper */}
-      <div className="overflow-x-auto -mx-2 sm:-mx-4 md:-mx-6">
-        <div className="inline-block min-w-full align-middle px-2 sm:px-4 md:px-6">
-          <table className="w-full text-[11px] sm:text-sm border-collapse">
-            <thead className="text-xs border border-gray-200 bg-gray-50">
-              <tr>
+
+        </thead>
+
+        <tbody className="text-[12px] md:text-[14px] font-medium leading-[17px] md:leading-[20px] text-gray-900">
+          {orders.map((order) => {
+            const isExpanded = expandedRows.includes(order.tracking);
+            const visibleProducts = isExpanded
+              ? order.product
+              : order.product.slice(0, 1);
+
+            return (
+              <tr
+                key={order.tracking}
+                className="border-b border-gray-200 h-[50px] md:h-[72px]"
+              >
                 {headers.map((key) => (
-                  <th
-                    key={key}
-                    className="text-left text-gray-600 capitalize px-3 sm:px-5 py-2 sm:py-3 whitespace-nowrap"
+                  <td
+                    key={key as string}
+                    className="p-3 md:p-4 text-gray-900 align-top min-w-[120px]"
                   >
-                    {key}
-                  </th>
+                    {key === "product" ? (
+                      <div className="w-[140px] md:w-[200px]">
+                        <ul className="flex flex-wrap gap-[3px]">
+                          {visibleProducts.map((p, i) => (
+                            <li
+                              key={i}
+                              className="inline-block border text-gray-700 text-[10px] md:text-xs leading-[15px] border-gray-300/60 rounded-md px-[5px] py-[1px]"
+                            >{p}
+                            </li>
+                          ))}
+                        </ul>
+
+                        {order.product.length > 1 && (
+                          <button
+                            onClick={() => toggleExpand(order.tracking)}
+                            className="text-[#5798F4] text-[10px] md:text-xs mt-0.5 underline"
+                          >
+                            {isExpanded
+                              ? "Show less"
+                              : `+${order.product.length - 1} more items`}
+                          </button>
+                        )}
+                      </div>
+                    ) : key === "customer" ? (
+                      <div>
+                        <div className="text-[12px] md:text-[14px] md:w-[100px] font-medium text-gray-900">
+                          {order.customer.customerName}
+                        </div>
+                        <a
+                          href={order.customer.addressURL}
+                          className="text-gray-600 text-[10px] md:text-xs font-normal underline"
+                        >
+                          View Address
+                        </a>
+                      </div>
+                    ) : key === "courierStatus" ? (
+                      <span
+                        className={`px-2 py-[2px] text-[10px] md:text-[12px] rounded-full font-medium ${getStatusStyles(
+                          order[key] as string
+                        )}`}
+                      >
+                        {order[key]}
+                      </span>
+                    ) : (
+                      order[key]
+                    )}
+                  </td>
                 ))}
               </tr>
-            </thead>
+            );
+          })}
+        </tbody>
+      </table>
 
-            <tbody className="text-gray-700">
-              {orders.map((order) => {
-                const isExpanded = expandedRows.includes(order.tracking);
-                const visibleProducts = isExpanded
-                  ? order.product
-                  : order.product.slice(0, 1);
-
-                return (
-                  <tr
-                    key={order.tracking}
-                    className="border-b border-gray-200 hover:bg-gray-50 transition-colors"
-                  >
-                    {headers.map((key) => (
-                      <td
-                        key={key as string}
-                        className="px-3 sm:px-5 py-2 sm:py-3 align-top whitespace-nowrap"
-                      >
-                        {key === "product" ? (
-                          <div>
-                            <ul>
-                              {visibleProducts.map((p, i) => (
-                                <li
-                                  key={i}
-                                  className="border text-[10px] sm:text-xs border-gray-300/60 rounded-md px-2 py-1 mb-1"
-                                >
-                                  {p}
-                                </li>
-                              ))}
-                            </ul>
-
-                            {order.product.length > 1 && (
-                              <button
-                                onClick={() => toggleExpand(order.tracking)}
-                                className="text-blue-500 text-[10px] sm:text-xs underline mt-1"
-                              >
-                                {isExpanded
-                                  ? "Show less"
-                                  : `+${order.product.length - 1} more items`}
-                              </button>
-                            )}
-                          </div>
-                        ) : key === "customer" ? (
-                          <div>
-                            <div className="text-[11px] sm:text-sm font-medium">
-                              {order.customer.customerName}
-                            </div>
-                            <a
-                              href={order.customer.addressURL}
-                              className="text-blue-500 text-[10px] sm:text-xs underline"
-                            >
-                              View Address
-                            </a>
-                          </div>
-                        ) : key === "courierStatus" ? (
-                          <span
-                            className={`px-2 py-[2px] text-[10px] sm:text-xs rounded-full font-medium ${getStatusStyles(
-                              order[key] as string
-                            )}`}
-                          >
-                            {order[key]}
-                          </span>
-                        ) : (
-                          <span className="text-[11px] sm:text-sm">{order[key]}</span>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Mobile card hidden for now */}
-      <div className="hidden">
-        <MobileCard />
-      </div>
+      
     </div>
   );
 }
+
+// ==================================================================================
+// What this does:
+// Mobile-first: Base text/padding = mobile. Desktop uses md: overrides.
+
+// Header: 16px title on mobile, 18px on desktop.
+
+// Paragraph: 13px on mobile, 14px on desktop.
+
+// Table text: 13px → 14px.
+
+// Product tags: 11px → 12px.
+
+// Address link: 11px → 12px.
+
+// Padding: 12px (mobile) → 16px (desktop).
+
+// Row height: 60px (mobile) → 72px (desktop).
+
+// No overflow or text squeeze on small screens.
+
+// ===========================================================================
+
+
+
+
+//   return (
+//     <div className="overflow-x-auto md:overflow-visible w-full md:w-[95%] max-w-[1216px] max-h-[569px] rounded-xl border bg-white border-gray-200 mx-auto my-8 md:my-20 px-3 md:px-0">
+//       {/* ---------------- HEADER ---------------- */}
+//       <div className="flex flex-col md:flex-row justify-between items-start md:items-center h-auto md:h-[92px] pt-3 pr-3 pb-3 pl-3 md:pt-3 md:pr-6 md:pb-5 md:pl-6 gap-2 md:gap-4 border-b border-gray-100">
+//         <div>
+//           <h2 className="text-gray-900 text-[15px] md:text-[18px] font-semibold">Customers</h2>
+//           <p className="text-gray-600 text-[12px] md:text-sm font-normal mt-1 md:mt-1.5">
+//             These companies have purchased in the last 12 months.
+//           </p>
+//         </div>
+//         <button className="text-gray-700 cursor-pointer hidden md:block">
+//           <svg
+//             xmlns="http://www.w3.org/2000/svg"
+//             fill="none"
+//             viewBox="0 0 24 24"
+//             strokeWidth={2}
+//             stroke="currentColor"
+//             className="w-5 h-5"
+//           >
+//             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h.01M12 12h.01M12 18h.01" />
+//           </svg>
+//         </button>
+//       </div>
+
+//       {/* ---------------- TABLE ---------------- */}
+//       <table className="min-w-[760px] md:min-w-full border-collapse">
+//         <thead className="bg-[#FAFAFA] border-b border-[#E9EAEB]">
+//           <tr>
+//             {headers.map((key) => (
+//               <th
+//                 key={key}
+//                 className="text-[11px] md:text-[12px] font-semibold text-left text-gray-600 capitalize px-2 py-1.5 md:px-4 md:py-3 min-w-[120px]"
+//               >
+//                 {key}
+//               </th>
+//             ))}
+//           </tr>
+//         </thead>
+
+//         <tbody className="text-[12px] md:text-[14px] font-medium leading-[17px] md:leading-[20px] text-gray-900 border border-gray-200">
+//           {orders.map((order) => {
+//             const isExpanded = expandedRows.includes(order.tracking);
+//             const visibleProducts = isExpanded
+//               ? order.product
+//               : order.product.slice(0, 1);
+
+//             return (
+//               <tr
+//                 key={order.tracking}
+//                 className="border-b border-gray-200 h-[52px] md:h-[72px]"
+//               >
+//                 {headers.map((key) => (
+//                   <td
+//                     key={key as string}
+//                     className="p-2 md:p-4 text-gray-900 align-top min-w-[140px]"
+//                   >
+//                     {key === "product" ? (
+//                       <div className="w-[140px] md:w-[200px]">
+//                         <ul className="flex flex-wrap gap-[3px]">
+//                           {visibleProducts.map((p, i) => (
+//                             <li
+//                               key={i}
+//                               className="inline-block border text-gray-700 text-[10px] md:text-xs leading-[15px] border-gray-300/60 rounded-md px-[5px] py-[1px]"
+//                             >
+//                               {p}
+//                             </li>
+//                           ))}
+//                         </ul>
+
+//                         {order.product.length > 1 && (
+//                           <button
+//                             onClick={() => toggleExpand(order.tracking)}
+//                             className="text-[#5798F4] text-[10px] md:text-xs mt-0.5 underline"
+//                           >
+//                             {isExpanded
+//                               ? "Show less"
+//                               : `+${order.product.length - 1} more`}
+//                           </button>
+//                         )}
+//                       </div>
+//                     ) : key === "customer" ? (
+//                       <div className="min-w-[140px]">
+//                         <div className="text-[12px] md:text-[14px] font-medium text-gray-900 truncate">
+//                           {order.customer.customerName}
+//                         </div>
+//                         <a
+//                           href={order.customer.addressURL}
+//                           className="text-gray-600 text-[10px] md:text-xs font-normal underline"
+//                         >
+//                           View Address
+//                         </a>
+//                       </div>
+//                     ) : key === "courierStatus" ? (
+//                       <span
+//                         className={`px-2 py-[2px] text-[10px] md:text-[12px] rounded-full font-medium ${getStatusStyles(
+//                           order[key] as string
+//                         )}`}
+//                       >
+//                         {order[key]}
+//                       </span>
+//                     ) : (
+//                       <span className="whitespace-nowrap">{order[key]}</span>
+//                     )}
+//                   </td>
+//                 ))}
+//               </tr>
+//             );
+//           })}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// }
